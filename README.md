@@ -75,6 +75,37 @@ There is an interesting approach to the [Tic Tac Toe win condition in React](htt
 **Acceptance Criteria**
 
 - Can see a notice displaying which player won
+// Want ex. 0,1,2 to mean winning statement and have 7 different cases for winning (across, slant, vertical) 
+// array = []
+// reference
+const winner = (board) => {
+// `array that is storing all the index's to have the winning value
+  const winningLines(squares) = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+}
+  // counting system 
+  for (let i = 0; i < winningLines.length; i++) {
+  // assigning variable a, b, c 
+  // ex. winning lines at [0]
+  // const [0, 1, 2] = winningLines[0];
+    const [a, b, c] = winningLines[i];
+  // ex. if (board[0] && board[0] === board[1] && board[0] === board[2]) {
+  // ex. if (❌ && ❌ === 🅾️ && ❌ === ❌) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      return board[a];
+    }
+  }
+  return null;
+}
+  }
 - Game play cannot continue after the game has been won
 - Can click on a restart button that will clear the game board
 
